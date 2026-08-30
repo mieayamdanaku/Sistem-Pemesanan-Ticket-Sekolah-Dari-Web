@@ -52,7 +52,7 @@ $events = mysqli_query($conn, "SELECT * FROM events
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Siswa - E-Tiket</title>
+    <title>Halaman siswa</title>
     <meta http-equiv="refresh" content="15">
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
