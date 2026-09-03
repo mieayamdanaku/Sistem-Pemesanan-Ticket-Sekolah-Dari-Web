@@ -138,7 +138,6 @@ echo $pesan_password;
               <meta http-equiv="refresh" content="15">
 
     <title>Profil Saya </title>
-
     <link href="../assets/css/bootstrap.min.css"
           rel="stylesheet">
 
