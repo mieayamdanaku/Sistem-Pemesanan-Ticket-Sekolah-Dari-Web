@@ -137,7 +137,7 @@ echo $pesan_password;
           content="width=device-width, initial-scale=1.0">
               <meta http-equiv="refresh" content="15">
 
-    <title>Profil Saya - E-Tiket</title>
+    <title>Profil Saya </title>
 
     <link href="../assets/css/bootstrap.min.css"
           rel="stylesheet">
