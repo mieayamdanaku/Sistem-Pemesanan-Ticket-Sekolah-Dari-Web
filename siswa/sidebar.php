@@ -89,6 +89,22 @@
         right:-60px;
     }
 
+    .profile-box::after{
+        content:'';
+
+        position:absolute;
+
+        width:180px;
+        height:180px;
+
+        background:rgba(255,255,255,.08);
+
+        border-radius:50%;
+
+        bottom:-80px;
+        left:-60px;
+    }
+
     /* AVATAR */
 
     .sidebar-avatar{
@@ -375,6 +391,19 @@
 
             <div class="menu-text">
                 Tiket Saya
+            </div>
+
+        </a>
+
+        <a href="history.php"
+           class="menu-link <?= ($page == 'history.php') ? 'active' : '' ?>">
+
+            <div class="menu-icon">
+                📜
+            </div>
+
+            <div class="menu-text">
+                History Pembelian
             </div>
 
         </a>
