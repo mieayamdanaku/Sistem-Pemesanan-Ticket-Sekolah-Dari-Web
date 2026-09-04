@@ -31,7 +31,6 @@ $expired = mysqli_query($conn, "SELECT * FROM events WHERE (tanggal < '$today' A
 <head>
     <meta charset="UTF-8">
     <title>Kelola Event | E-Tiket</title>
-        <meta http-equiv="refresh" content="15">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/css2.css" rel="stylesheet">
     <style>

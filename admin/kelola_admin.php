@@ -90,7 +90,6 @@ $admins = mysqli_query($conn, "SELECT * FROM admin ORDER BY id DESC");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="refresh" content="15">
     <title>Administrator Panel - Kelola Admin</title>
     
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
