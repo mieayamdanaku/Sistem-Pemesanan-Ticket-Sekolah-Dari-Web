@@ -3,8 +3,10 @@ session_start();
 require 'koneksi.php';
 /** @var mysqli $conn */
 
+// Cegah user yang sudah login untuk akses halaman login lagi
 if(isset($_SESSION['siswa'])) { header("Location: siswa/dashboard.php"); exit; }
 if(isset($_SESSION['admin'])) { header("Location: admin/dashboard.php"); exit; }
+if(isset($_SESSION['petugas'])) { header("Location: petugas/dashboard.php"); exit; } // TAMBAHAN: Cek session petugas
 
 $error = "";
 
@@ -26,7 +28,21 @@ if (isset($_POST['login'])) {
         }
     }
 
-    // 2. Cek Siswa
+    // 2. Cek Petugas (TAMBAHAN BARU)
+    $stmt_petugas = mysqli_prepare($conn, "SELECT * FROM petugas WHERE username = ?");
+    mysqli_stmt_bind_param($stmt_petugas, "s", $identitas);
+    mysqli_stmt_execute($stmt_petugas);
+    $res_petugas = mysqli_stmt_get_result($stmt_petugas);
+    
+    if ($petugas = mysqli_fetch_assoc($res_petugas)) {
+        if (password_verify($password, $petugas['password'])) {
+            $_SESSION['petugas'] = $petugas['username'];
+            header("Location: petugas/dashboard.php"); 
+            exit;
+        }
+    }
+
+    // 3. Cek Siswa
     $stmt_siswa = mysqli_prepare($conn, "SELECT * FROM siswa WHERE nisn = ?");
     mysqli_stmt_bind_param($stmt_siswa, "s", $identitas);
     mysqli_stmt_execute($stmt_siswa);
@@ -39,6 +55,7 @@ if (isset($_POST['login'])) {
             exit;
         }
     }
+    
     $error = "Username/NISN atau Password salah!";
 }
 ?>
@@ -48,7 +65,6 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <title>Login - E-Tiket</title>
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <meta http-equiv="refresh" content="30">
     <style>
         body { background: linear-gradient(135deg, #2563EB, #1E40AF); height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif; }
         .login-card { background: white; padding: 40px; border-radius: 24px; width: 400px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
@@ -57,7 +73,7 @@ if (isset($_POST['login'])) {
 </head>
 <body>
 <div class="login-card">
-    <h3 class="fw-bold text-center mb-4">Login </h3>
+    <h3 class="fw-bold text-center mb-4">Login</h3>
     <?php if($error): ?>
         <div class="alert alert-danger py-2 text-center small"><?= $error ?></div>
     <?php endif; ?>
@@ -70,15 +86,9 @@ if (isset($_POST['login'])) {
             <label class="form-label text-muted small fw-bold">Password</label>
             <input type="password" name="password" class="form-control" placeholder="••••••••" required>
         </div>
-        <button type="submit" name="login" class="btn-login">Masuk </button>
+        <button type="submit" name="login" class="btn-login">Masuk</button>
     </form>
 </div>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-        
-
-
-
-
-
