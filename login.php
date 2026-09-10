@@ -88,6 +88,9 @@ if (isset($_POST['login'])) {
         </div>
         <button type="submit" name="login" class="btn-login">Masuk</button>
     </form>
+    <div class="text-center mt-3">
+        <a href="bantuan_password.php" target="_blank" rel="noopener" class="small text-decoration-none">Lupa Password?</a>
+    </div>
 </div>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>

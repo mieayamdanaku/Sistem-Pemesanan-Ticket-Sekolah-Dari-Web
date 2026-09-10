@@ -41,6 +41,9 @@
         <a href="dashboard.php" class="menu-link <?= ($current == 'dashboard.php') ? 'active' : '' ?>">
             <span>🏠</span> Dashboard Pemesanan
         </a>
+        <a href="../laporan.php?format=pdf&view=semua" target="_blank" class="menu-link">
+            <span>🖨️</span> Cetak Rekap Laporan
+        </a>
         <a href="tambah_event.php" class="menu-link <?= ($current == 'tambah_event.php') ? 'active' : '' ?>">
             <span>➕</span> Tambah Event Baru
         </a>

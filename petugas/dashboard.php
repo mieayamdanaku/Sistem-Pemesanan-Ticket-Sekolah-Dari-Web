@@ -209,7 +209,11 @@ $pemesanan = mysqli_query($conn, "SELECT tiket.*, siswa.nama as nama_siswa, even
         <!-- 4. RIWAYAT PEMESANAN (Target Scroll) -->
         <div id="riwayat-section" class="d-flex justify-content-between align-items-center mb-4 pt-2">
             <h5 class="fw-bold text-secondary m-0"><?= $filter_title ?></h5>
-            <span class="badge bg-white text-dark border rounded-pill px-3 py-2 fw-bold shadow-sm">Data Terkini</span>
+            <div class="d-flex gap-2 align-items-center">
+                <a href="../laporan.php?format=excel&amp;view=<?= urlencode($view) ?>" class="btn btn-success btn-sm fw-bold">Excel</a>
+                <a href="../laporan.php?format=pdf&amp;view=<?= urlencode($view) ?>" target="_blank" class="btn btn-danger btn-sm fw-bold">PDF</a>
+                <span class="badge bg-white text-dark border rounded-pill px-3 py-2 fw-bold shadow-sm">Data Terkini</span>
+            </div>
         </div>
         
         <div class="card table-card p-4 shadow-sm border-0">
