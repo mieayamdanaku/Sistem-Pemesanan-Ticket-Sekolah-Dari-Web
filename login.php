@@ -69,6 +69,7 @@ if (isset($_POST['login'])) {
         body { background: linear-gradient(135deg, #2563EB, #1E40AF); height: 100vh; display: flex; align-items: center; justify-content: center; font-family: sans-serif; }
         .login-card { background: white; padding: 40px; border-radius: 24px; width: 400px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
         .btn-login { background: #2563EB; color: white; font-weight: 600; border-radius: 12px; padding: 12px; width: 100%; border: none; transition: 0.3s; }
+        .btn-login:hover { background: #1D4ED8; }
     </style>
 </head>
 <body>
@@ -79,13 +80,19 @@ if (isset($_POST['login'])) {
     <?php endif; ?>
     <form method="POST">
         <div class="mb-3">
-            <label class="form-label text-muted small fw-bold">Masukkan NISN</label>
-            <input type="text" name="identitas" class="form-control" placeholder="NISN" required>
+            <label class="form-label text-muted small fw-bold">Masukkan NISN / Username</label>
+            <input type="text" name="identitas" class="form-control" placeholder="NISN / Username" required>
         </div>
-        <div class="mb-4">
+        <div class="mb-2">
             <label class="form-label text-muted small fw-bold">Password</label>
             <input type="password" name="password" class="form-control" placeholder="••••••••" required>
         </div>
+        
+        <!-- TAMBAHAN LINK LUPA PASSWORD -->
+        <div style="text-align: right; margin-bottom: 20px;">
+            <a href="lupa.php" target="_blank" style="text-decoration: none; font-size: 0.85rem; font-weight: 600; color: #2563EB;">Lupa Password?</a>
+        </div>
+        
         <button type="submit" name="login" class="btn-login">Masuk</button>
     </form>
 </div>

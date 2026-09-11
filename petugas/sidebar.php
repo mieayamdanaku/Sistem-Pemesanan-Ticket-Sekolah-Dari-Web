@@ -30,17 +30,25 @@
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
     <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title fw-bold text-primary">Menu Admin</h5>
+        <h5 class="offcanvas-title fw-bold text-primary">Menu Petugas</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column">
         <?php $current = basename($_SERVER['PHP_SELF']); ?>
+        
         <a href="dashboard.php" class="menu-link <?= ($current == 'dashboard.php') ? 'active' : '' ?>">
             <span>🏠</span> Dashboard Pemesanan
         </a>
+
+        <!-- TAMBAHAN MENU LAPORAN KEUANGAN -->
+        <a href="laporan.php" class="menu-link <?= ($current == 'laporan.php') ? 'active' : '' ?>">
+            <span>📊</span> Laporan Keuangan
+        </a>
+
         <a href="tambah_event.php" class="menu-link <?= ($current == 'tambah_event.php') ? 'active' : '' ?>">
             <span>➕</span> Tambah Event Baru
         </a>
+        
         <a href="kelola_event.php" class="menu-link <?= ($current == 'kelola_event.php' || $current == 'edit_event.php') ? 'active' : '' ?>">
             <span>✏️</span> Kelola & Edit Event
         </a>

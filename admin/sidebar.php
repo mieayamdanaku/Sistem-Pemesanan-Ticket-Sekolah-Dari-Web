@@ -35,29 +35,36 @@
     </div>
     <div class="offcanvas-body d-flex flex-column">
         <?php $current = basename($_SERVER['PHP_SELF']); ?>
-        <a href="tambah_petugas.php" class="menu-link <?= ($current == 'tambah_petugas.php') ? 'active' : '' ?>">
-            <span>👥</span> Kelola Petugas
-        </a>
+    
         <a href="dashboard.php" class="menu-link <?= ($current == 'dashboard.php') ? 'active' : '' ?>">
             <span>🏠</span> Dashboard Pemesanan
         </a>
+
+        <!-- TAMBAHAN MENU LAPORAN KEUANGAN -->
+        <a href="laporan.php" class="menu-link <?= ($current == 'laporan.php') ? 'active' : '' ?>">
+            <span>📊</span> Laporan Keuangan
+        </a>
+
         <a href="tambah_event.php" class="menu-link <?= ($current == 'tambah_event.php') ? 'active' : '' ?>">
             <span>➕</span> Tambah Event Baru
         </a>
         <a href="kelola_event.php" class="menu-link <?= ($current == 'kelola_event.php' || $current == 'edit_event.php') ? 'active' : '' ?>">
             <span>✏️</span> Kelola & Edit Event
         </a>
-        <a href="tambah_siswa.php" class="menu-link <?= ($current == 'tambah_siswa.php') ? 'active' : '' ?>">
+
+        <hr class="text-muted opacity-25">
+        
+                <a href="tambah_siswa.php" class="menu-link <?= ($current == 'tambah_siswa.php') ? 'active' : '' ?>">
             <span>👤</span> Kelola Akun Siswa
         </a>
-        
-        <hr class="text-muted opacity-25">
         
         <a href="kelola_admin.php" class="menu-link <?= ($current == 'kelola_admin.php') ? 'active' : '' ?>">
             <span>⚙️</span> Kelola Admin
         </a>
+                <a href="tambah_petugas.php" class="menu-link <?= ($current == 'tambah_petugas.php') ? 'active' : '' ?>">
+            <span>👥</span> Kelola Petugas
+        </a>
 
-        
         <div class="mt-auto mb-3">
             <a href="../logout.php" class="btn btn-danger w-100 rounded-pill fw-bold py-2 shadow-sm">
                 Logout

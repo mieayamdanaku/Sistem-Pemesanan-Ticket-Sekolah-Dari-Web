@@ -38,57 +38,13 @@ $data = mysqli_fetch_assoc($query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Struk Pembelian - <?= $data['kode_unik'] ?></title>
+    
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/css2.css" rel="stylesheet">
+    <!-- PANGGIL FILE CSS BARU DI SINI -->
+    <link href="../assets/css/struk.css" rel="stylesheet">
+    
     <script src="../assets/js/qrcode.min.js"></script>
-
-    <style>
-        :root{ --primary:#1E3A8A; --dark:#0F172A; }
-        body{ background: #E2E8F0; font-family:'Plus Jakarta Sans',sans-serif; color: var(--dark); padding: 40px 20px; }
-        
-        .receipt-card {
-            background: white;
-            max-width: 450px;
-            margin: 0 auto;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .receipt-header {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            border-bottom: 2px dashed rgba(255,255,255,0.5);
-        }
-
-        .receipt-body { padding: 30px; }
-        .receipt-item { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem; }
-        .receipt-label { color: #64748B; font-weight: 600; }
-        .receipt-val { font-weight: 800; text-align: right; }
-        
-        .divider { border-top: 2px dashed #E2E8F0; margin: 20px 0; }
-        
-        .total-box { background: #F8FAFC; padding: 15px; border-radius: 12px; }
-        .total-text { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
-
-        .action-buttons { max-width: 450px; margin: 20px auto; display: flex; gap: 15px; }
-        .btn-print { background: var(--dark); color: white; border-radius: 12px; font-weight: bold; flex: 1; padding: 12px; border: none; transition: .3s;}
-        .btn-print:hover { background: #000; color: white; transform: translateY(-2px);}
-        .btn-back { border: 2px solid var(--dark); color: var(--dark); border-radius: 12px; font-weight: bold; flex: 1; padding: 12px; text-align: center; text-decoration: none; transition: .3s;}
-        .btn-back:hover { background: var(--dark); color: white; }
-
-        /* PENGATURAN CETAK (PRINT) - FIX WARNING CSS */
-        @media print {
-            body { background: white; padding: 0; }
-            .receipt-card { box-shadow: none; border: 1px solid #ddd; border-radius: 0; }
-            .no-print { display: none !important; }
-            .receipt-header { background: white !important; color: black !important; border-bottom: 2px dashed black !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .total-text { color: black !important; }
-        }
-    </style>
 </head>
 <body>
 
